@@ -44,9 +44,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -103,9 +104,10 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -235,31 +237,40 @@ img {
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  color: #fff;
-  margin-bottom: 20px;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 24px;
+  line-height: 1.1;
 }
 
 .hero-content p {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
+  font-weight: 400;
   line-height: 1.8;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 32px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 36px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  background: rgba(255,255,255,0.12);
+  padding: 6px 18px;
+  background: rgba(245, 166, 35, 0.15);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(245, 166, 35, 0.3);
   border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 24px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 28px;
 }
 
 .btn-group {
@@ -323,7 +334,9 @@ section {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin-bottom: 16px;
 }
 
@@ -346,33 +359,66 @@ section {
 /* ─── Services Grid ─── */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
 .service-card {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--primary);
-  border-radius: var(--radius);
-  padding: 28px 28px 32px;
+  border-radius: 0;
+  padding: 44px 36px 40px;
   transition: all var(--transition);
-  cursor: default;
+  overflow: hidden;
+}
+
+.service-num {
+  position: absolute;
+  top: 16px;
+  right: 28px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(0,0,0,0.035);
+  transition: color var(--transition);
+  pointer-events: none;
+  user-select: none;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary);
 }
 
+.service-card:hover .service-num {
+  color: rgba(245, 166, 35, 0.12);
+}
+
 .service-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  position: relative;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+}
+
+.service-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
 }
 
 .service-card p {
-  font-size: 0.92rem;
+  position: relative;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.7;
 }
@@ -390,24 +436,25 @@ section {
 
 .feature-card {
   text-align: center;
-  padding: 32px 20px;
+  padding: 40px 24px 36px;
   background: var(--bg-card);
-  border-radius: var(--radius);
+  border-radius: 0;
   border: 1px solid var(--border);
-  border-top: 3px solid var(--primary);
   transition: all var(--transition);
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
 }
 
 .feature-card h4 {
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
 }
 
 .feature-card p {
@@ -522,6 +569,8 @@ section {
 
 .contact-info h3 {
   font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 
@@ -724,6 +773,8 @@ section {
 
 .page-header h1 {
   font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .page-content {
@@ -827,7 +878,7 @@ section {
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .hero-content p {
@@ -840,6 +891,16 @@ section {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-num {
+    font-size: 5rem;
+    top: 12px;
+    right: 20px;
+  }
+
+  .service-card {
+    padding: 36px 24px 32px;
   }
 
   .features-grid {
@@ -913,6 +974,6 @@ section {
   }
 
   .hero-content h1 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 }
