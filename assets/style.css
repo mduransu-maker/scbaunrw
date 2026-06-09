@@ -224,8 +224,14 @@ img {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 720px;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
   color: #fff;
+}
+
+.hero-content .btn-group {
+  justify-content: center;
 }
 
 .hero-content h1 {
@@ -347,8 +353,9 @@ section {
 .service-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
   border-radius: var(--radius);
-  padding: 32px 28px;
+  padding: 28px 28px 32px;
   transition: all var(--transition);
   cursor: default;
 }
@@ -357,24 +364,6 @@ section {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary);
-}
-
-.service-icon {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(47, 140, 122, 0.1);
-  border-radius: 12px;
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  transition: all var(--transition);
-}
-
-.service-card:hover .service-icon {
-  background: var(--primary);
-  color: #fff;
 }
 
 .service-card h3 {
@@ -405,17 +394,13 @@ section {
   background: var(--bg-card);
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
   transition: all var(--transition);
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
-}
-
-.feature-icon {
-  font-size: 2rem;
-  margin-bottom: 16px;
 }
 
 .feature-card h4 {
