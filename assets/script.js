@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var header = document.getElementById('header');
   var toggle = document.getElementById('menuToggle');
   var nav = document.getElementById('nav');
+  var typewriter = document.getElementById('typewriter');
 
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
@@ -21,5 +22,22 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
+  }
+
+  if (typewriter) {
+    var text = typewriter.getAttribute('data-text') || 'Deutschlandweit im Einsatz';
+    var i = 0;
+    var speed = 50;
+    typewriter.textContent = '';
+
+    function type() {
+      if (i < text.length) {
+        typewriter.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+
+    setTimeout(type, 400);
   }
 });
