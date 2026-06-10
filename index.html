@@ -208,10 +208,11 @@
             </div>
           </div>
         </div>
-        <form class="contact-form" action="https://formsubmit.co/info@scbaunrw.de" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@scbaunrw.de" method="POST">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://mduransu-maker.github.io/scbaunrw/#kontakt">
+          <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_subject" value="Neue Anfrage von scbaunrw.de">
+          <div id="formFields">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name *</label>
@@ -243,6 +244,10 @@
             <textarea id="message" name="nachricht" required></textarea>
           </div>
           <button type="submit" class="btn-submit">Anfrage absenden →</button>
+          </div>
+          <div class="form-success" id="formSuccess" style="display:none">
+            <p>Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.</p>
+          </div>
         </form>
       </div>
     </div>

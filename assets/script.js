@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.getElementById('menuToggle');
   var nav = document.getElementById('nav');
   var typewriter = document.getElementById('typewriter');
+  var form = document.getElementById('contactForm');
 
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
@@ -39,5 +40,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     setTimeout(type, 400);
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var btn = form.querySelector('.btn-submit');
+      var fields = document.getElementById('formFields');
+      var success = document.getElementById('formSuccess');
+
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet...';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      }).then(function () {
+        fields.style.display = 'none';
+        success.style.display = 'block';
+      }).catch(function () {
+        fields.style.display = 'none';
+        success.style.display = 'block';
+      });
+    });
   }
 });

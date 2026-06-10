@@ -686,6 +686,25 @@ section {
   box-shadow: 0 8px 24px rgba(47, 140, 122, 0.35);
 }
 
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-success {
+  padding: 32px 0;
+  text-align: center;
+}
+
+.form-success p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
 /* ─── CTA ─── */
 .cta-section {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
